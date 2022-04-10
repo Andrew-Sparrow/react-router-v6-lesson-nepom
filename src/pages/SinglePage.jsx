@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 
 
 const Singlepage = () => {
@@ -15,11 +15,12 @@ const Singlepage = () => {
   return (
     <div>
       {post && (
-        <>
+        <> 
           <h1>
             {post.title}
           </h1>
           <p>{post.body}</p>
+          <Link to={`/posts/${id}/edit`}>Edit post</Link>
         </>
       )}
     </div>
